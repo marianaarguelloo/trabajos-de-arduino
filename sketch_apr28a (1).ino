@@ -1,5 +1,6 @@
 void setup()
 {
+  //HOLIS esto es un comentario del profe
   pinMode(7, INPUT);//establece el pin como entrada o salida
   pinMode(6, INPUT);
   pinMode(2, OUTPUT);
