@@ -1,24 +1,13 @@
-#define LED 3
-#define INTERRUPTOR 5
+int temperatura = 0
 
 void setup() {
-pinMode (3,OUTPUT);
-pinMode (5 ,INPUT);
-
+  pinMode (A5,INPUT);
+  Serial.begin (9600);
 }
 
 void loop() {
-  if ( digitalRead (5) == HIGH){
-  digitalWrite (3,HIGH);
-  delay (500);
-  digitalWrite (3,LOW);
-  delay(500);
-  }
-  else {
-  digitalWrite (3,HIGH); 
+  temperatura = -40 + 0.488155 * (analogRead(A5) - 20); //leo la temperatura en grados C
   delay (1000);
-  digitalWrite (3,LOW);
-  delay (1000);
-  }
+  Serial.print (" La temperatura es");
 
 }
